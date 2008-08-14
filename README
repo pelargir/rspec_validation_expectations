@@ -1,0 +1,38 @@
+= rspec_validation_expectations
+
+Adds several handy expectations for testing ActiveRecord model validations.
+
+
+== Installation
+
+Install the gem directly:
+
+  gem sources -a http://gems.github.com (you only have to do this once)
+  sudo gem install pelargir-rspec_validation_expectations
+  
+Or install the gem in your Rails project:
+  
+  gem sources -a http://gems.github.com
+  script/plugin install pelargir-rspec_validation_expectations
+
+Or clone the project:
+
+  git clone git://github.com/pelargir/rspec_validation_expectations.git
+
+
+== Usage
+
+Ensure that validations are getting called in your models:
+
+  describe User do
+    it_should_validate_presence_of :first_name, :last_name, :email
+    it_should_validate_numericality_of :zip
+    it_should_validate_uniqueness_of :email
+  end
+
+
+== Resources
+
+Repository: http://github.com/pelargir/rspec_validation_expectations/
+Blog: http://matthewbass.com
+Author: Matthew Bass
