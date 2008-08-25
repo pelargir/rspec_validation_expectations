@@ -2,6 +2,12 @@
 
 Adds several handy expectations for testing ActiveRecord model validations.
 
+== Dependencies
+
+Depends on validation_reflection plugin:
+
+  script/plugin install git://github.com/redinger/validation_reflection.git
+
 == Installation
 
 Install the gem directly:
@@ -20,13 +26,41 @@ Or clone the project:
 
 == Usage
 
-Ensure that validations are getting called in your models:
+Ensure that validations and assocations are properly defined in your models:
 
   describe User do
-    it_should_validate_presence_of :first_name, :last_name, :email
+    it_should_validate_presence_of     :first_name, :last_name, :email
     it_should_validate_numericality_of :zip
-    it_should_validate_uniqueness_of :email
+    it_should_validate_uniqueness_of   :email
+    it_should_validate_inclusion_of    :gender, :in => %w(Male Female)
+    
+    # tests that User.count increases by 1
+    it_should_be_createable :with => {:first_name => 'Ed', :last_name => 'The Duck', :email => 'a@b.com'}
+    
+    it_should_belong_to :employer
+    it_should_have_many :friends, :romans, :countrymen
+    it_should_have_one  :account
+    it_should_have_and_belong_to_many :comments
   end
+  
+Which gives you:
+
+ruby script/spec --format s spec/models/user_spec.rb:
+
+User
+- should validate presence of first name
+- should validate presence of last name
+- should validate presence of email
+- should validate numericality of zip
+- should validate uniqueness of email
+- should validate inclusion of gender as one of Male or Female
+- should be creatable
+- should belong to employer
+- should have many friends
+- should have many romans
+- should have many countrymen
+- should have one account
+- should have and belong to many comments
 
 == Resources
 
