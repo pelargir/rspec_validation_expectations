@@ -4,7 +4,7 @@ Adds several handy expectations for testing ActiveRecord model validations.
 
 == Dependencies
 
-Depends on validation_reflection plugin:
+Requires the validation_reflection plugin:
 
   script/plugin install git://github.com/redinger/validation_reflection.git
 
