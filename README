@@ -12,13 +12,11 @@ Requires the validation_reflection plugin:
 
 Install the gem directly:
 
-  gem sources -a http://gems.github.com (you only have to do this once)
-  sudo gem install pelargir-rspec_validation_expectations
+  sudo gem install pelargir-rspec_validation_expectations --source=http://gems.github.com
   
 Or install the gem in your Rails project:
   
-  gem sources -a http://gems.github.com
-  script/plugin install pelargir-rspec_validation_expectations
+  script/plugin install git://github.com/pelargir/rspec_validation_expectations.git
 
 Or clone the project:
 
@@ -41,26 +39,30 @@ Ensure that validations and assocations are properly defined in your models:
     it_should_have_many :friends, :romans, :countrymen
     it_should_have_one  :account
     it_should_have_and_belong_to_many :comments
+    
+    # tests that the attribute is protected
+    it_should_protect :email
   end
   
 Which gives you:
 
-ruby script/spec --format s spec/models/user_spec.rb:
+  ruby script/spec --format s spec/models/user_spec.rb:
 
-User
-- should validate presence of first name
-- should validate presence of last name
-- should validate presence of email
-- should validate numericality of zip
-- should validate uniqueness of email
-- should validate inclusion of gender as one of Male or Female
-- should be creatable
-- should belong to employer
-- should have many friends
-- should have many romans
-- should have many countrymen
-- should have one account
-- should have and belong to many comments
+  User
+  - should validate presence of first name
+  - should validate presence of last name
+  - should validate presence of email
+  - should validate numericality of zip
+  - should validate uniqueness of email
+  - should validate inclusion of gender as one of Male or Female
+  - should be creatable
+  - should belong to employer
+  - should have many friends
+  - should have many romans
+  - should have many countrymen
+  - should have one account
+  - should have and belong to many comments
+  - should protect email
 
 == Resources
 
