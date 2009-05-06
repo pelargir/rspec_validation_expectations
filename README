@@ -1,6 +1,6 @@
 = rspec_validation_expectations
 
-Adds several handy expectations for testing ActiveRecord model validations.
+Adds several handy expectations for testing ActiveRecord model validations and associations.
 
 == Dependencies
 
