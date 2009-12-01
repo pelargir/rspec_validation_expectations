@@ -11,10 +11,17 @@ Gem::Specification.new do |s|
   s.files    = [
     "CHANGELOG",
     "MIT-LICENSE",
-		"README",
-		"rspec_validation_expectations.gemspec",
-		"lib/rspec_validation_expectations.rb"
-		]
+    "README",
+    "Rakefile",
+    "init.rb",
+    "lib/rspec_validation_expectations.rb",
+    "lib/rspec_validation_expectations/validation_expectations.rb",
+    "lib/rspec_validation_expectations/association_expectations.rb",
+    "lib/rspec_validation_expectations/other_expectations.rb",
+    "lib/spec/rails/matchers/associations.rb",
+    "rspec_validation_expectations.gemspec",
+    "test/test_helper.rb"
+    ]
   s.rdoc_options = ["--main", "README"]
   s.extra_rdoc_files = ["README"]
 end
