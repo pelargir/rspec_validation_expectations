@@ -39,7 +39,7 @@ def it_should_validate_inclusion_of(field_name, *args)
   model_name = described_type
   options = args.last.is_a?(Hash) ? args.pop : {}
   
-  it "should validate inclusion of #{field_name} as one of #{options[:in].to_sentence(:connector => 'or', :skip_last_comma => true)}" do
+  it "should validate inclusion of #{field_name} as one of #{options[:in].to_sentence(:words_connector => 'or', :last_word_connector => true)}" do
     validations = model_name.reflect_on_all_validations
     validation  = validations.detect {|v| v.macro == :validates_inclusion_of && v.name == field_name}
     
