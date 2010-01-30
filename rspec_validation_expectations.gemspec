@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.files    = FileList["[A-Z]*", "init.rb", "{lib,spec}/**/*.{rb,xml}"]
   s.rdoc_options = ["--main", "README"]
   s.extra_rdoc_files = ["README"]
-  s.add_development_dependency "validation_reflection", "0.3.5"
+  s.add_development_dependency "activesupport", "2.3.5"
   s.add_development_dependency "activerecord", "2.3.5"
+  s.add_development_dependency "validation_reflection", "0.3.5"
 end
