@@ -1,11 +1,14 @@
+require 'rake'
+
 Gem::Specification.new do |s|
   s.name     = "rspec_validation_expectations"
   s.version  = "0.5"
   s.date     = "2008-08-14"
-  s.summary  = "Adds several handy expectations for testing ActiveRecord model validations."
+  s.summary  = "Adds expectations for testing ActiveRecord model validations."
   s.email    = "pelargir@gmail.com"
   s.homepage = "http://github.com/pelargir/rspec_validation_expectations"
-  s.description = "Adds several handy expectations for testing ActiveRecord model validations."
+  s.description = "Adds several handy expectations for testing ActiveRecord model validations, similar to what Shoulda provides."
+  s.rubyforge_project = "rspec_validation_expectations"
   s.has_rdoc = true
   s.authors  = ["Matthew Bass"]
   s.files    = FileList["[A-Z]*", "init.rb", "{lib,spec}/**/*.{rb,xml}"]
