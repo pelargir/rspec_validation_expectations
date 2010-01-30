@@ -1,7 +1,9 @@
-#Copied from Josh Knowles' excellent Rspec on Rails Matchers (http://github.com/joshknowles/rspec-on-rails-matchers/tree/master)
+# Copied from Josh Knowles' excellent Rspec on Rails Matchers
+# (http://github.com/joshknowles/rspec-on-rails-matchers/tree/master)
+
 module Spec
-  module Rails
-    module Matchers
+  module Example
+    class ExampleGroup
       def belong_to(association)
         return simple_matcher("model to belong to #{association}") do |model|
           model = model.class if model.is_a? ActiveRecord::Base
