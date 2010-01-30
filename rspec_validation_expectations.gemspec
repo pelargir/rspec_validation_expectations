@@ -8,20 +8,9 @@ Gem::Specification.new do |s|
   s.description = "Adds several handy expectations for testing ActiveRecord model validations."
   s.has_rdoc = true
   s.authors  = ["Matthew Bass"]
-  s.files    = [
-    "CHANGELOG",
-    "MIT-LICENSE",
-    "README",
-    "Rakefile",
-    "init.rb",
-    "lib/rspec_validation_expectations.rb",
-    "lib/rspec_validation_expectations/validation_expectations.rb",
-    "lib/rspec_validation_expectations/association_expectations.rb",
-    "lib/rspec_validation_expectations/other_expectations.rb",
-    "lib/spec/rails/matchers/associations.rb",
-    "rspec_validation_expectations.gemspec",
-    "test/test_helper.rb"
-    ]
+  s.files    = FileList["[A-Z]*", "init.rb", "{lib,spec}/**/*.{rb,xml}"]
   s.rdoc_options = ["--main", "README"]
   s.extra_rdoc_files = ["README"]
+  s.add_development_dependency "validation_reflection", "0.3.5"
+  s.add_development_dependency "activerecord", "2.3.5"
 end
