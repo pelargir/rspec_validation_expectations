@@ -7,6 +7,8 @@ class TestClass < ActiveRecord::Base
   has_many :projects
   has_and_belongs_to_many :groups
 
+  attr_protected :admin
+
   validates_presence_of :first_name, :last_name
   validates_numericality_of :age
   validates_uniqueness_of :email
